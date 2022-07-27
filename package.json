@@ -1,0 +1,29 @@
+{
+  "version": "0.0.3",
+  "author": {
+    "name": "wzg"
+  },
+  "bin": {
+    "sgit": "src/app"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "cross-spawn": "^7.0.3",
+    "inquirer": "^6.2.2"
+  },
+  "deprecated": false,
+  "keywords": [
+    "git",
+    "tools",
+    "batch-delete",
+    "branch delete",
+    "branch"
+  ],
+  "main": "app",
+  "name": "simple-git-tools",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
