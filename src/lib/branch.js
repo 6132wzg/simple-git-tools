@@ -12,12 +12,11 @@ async function branch(options) {
     let promps = [];
     // 判断目标目录是否存在git
     if (!checkGit(options)) return
-
     options.operateName = operateCheck(options);
     let branchList = getBranchs(options);
     promps.push({
         type: options.multiple ? 'checkbox' : 'list',
-        message: 'select branch to ' + options.operateName,
+        message: `[${branchList.length}] select branch to ${options.operateName}`,
         name: 'branchs',
         pageSize: 30,
         choices: branchList,
