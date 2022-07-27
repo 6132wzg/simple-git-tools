@@ -51,8 +51,12 @@ async function branch(options) {
 
 function checkGit(options) {
     const projectPath = options.cwd || process.cwd();
+    let commanderStr = 'git branch';
+    if (options.all || options.remote) {
+        commanderStr = 'git fetch -p';
+    }
     try {
-        execSync('git fetch -p', { cwd: projectPath });
+        execSync(commanderStr, { cwd: projectPath });
     } catch (error) {
         console.log(projectPath + '不是git项目');
         return false

@@ -2,6 +2,8 @@
 
 Batch delete git branches: visualization, fuzzy matching, manual multiple selection, precise selection
 
+Easy to clean up useless branches 
+
 ## Install
 
 ```shell
@@ -18,11 +20,12 @@ git push origin -d xxx
 git branch | grep  'xxx' | xargs git branch -d
 git branch -r | grep  'xxx' | sed 's/origin\///g' | xargs -I {} git push origin :{}
 
-# the new way
-![img-spd](https://github.com/tuobaye0711/img-spd/raw/master/img-spd.png)
 ```
 
-```shell
+***
+
+```
+# the new way
 sgit branch -h
 
 Usage: branch [options]
@@ -39,11 +42,20 @@ Options:
   -f, --fuzzy [fuzzy]         fuzzy matching
 
   -m, --multiple [multiple]   Is it multiple choice(Default multi-select)
-  -s, --selected [selected]   Is it selected(Default selected)
+  -s, --selected [selected]   Is it selected(Default not selected)
 
   -c, --cwd [cwd]             project path(Default current directory)
+  -y, --yes [yes]             Need a second confirmation?(Default need)
+  
   -h, --help                  output usage information
+
 ```
+> example:
+> 
+> ![img-spd](https://raw.githubusercontent.com/6132wzg/simple-git-tools/master/simple-git-tools.png)
+
+
+
 
 ## License
 

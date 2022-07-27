@@ -5,7 +5,7 @@ const packageJson = require('../package.json');
 program
   .version(packageJson.version, "-v --version")
   .command('branch')
-  .description("simple-git 批量删除 git 分支：可视化、手动多选、模糊匹配精准选择")
+  .description("simple-git 批量删除 git 分支：可视化、模糊匹配、手动多选、精准选择")
   // 操作类型
   .option("-d, --delete [delete]", "删除分支操作(默认)")
   .option("-D, --delete-force [delete-force]", "强制删除分支操作")
@@ -15,10 +15,10 @@ program
   .option("-r, --remote [remote]", "仅远程分支")
   .option("-f, --fuzzy [fuzzy]", "模糊匹配")
   // 选择规则
-  .option("-m, --multiple [multiple]", "是否为多选(默认为多选)")
-  .option("-s, --selected [selected]", "是否选中(默认为多选)")
+  .option("-m, --multiple [multiple]", "是否为多选(默认多选)")
+  .option("-s, --selected [selected]", "是否选中(默认选中)")
   // 其他
-  .option("-y, --yes [yes]", "是否选中(默认为多选)")
+  .option("-y, --yes [yes]", "是否需要二次确认(默认需要)")
   .option("-c, --cwd [cwd]", "项目地址(默认为当前目录)")
 
   .action((option) => {
